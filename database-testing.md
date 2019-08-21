@@ -207,6 +207,10 @@ In this example, we'll attach a relation to some created models. When using the 
                ->each(function ($user) {
                     $user->posts()->save(factory(App\Post::class)->make());
                 });
+                
+You may use the `createMany` method to create multiple related models:
+
+    $user->posts()->createMany(factory(App\Post::class, 3)->make()->all());
 
 #### Relations & Attribute Closures
 
